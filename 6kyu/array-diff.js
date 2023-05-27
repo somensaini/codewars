@@ -8,7 +8,7 @@
 
 // arrayDiff([1,2,2,2,3],[2]) == [1,3]
 
-// Solution
-function array_diff(a, b) {
-  return a.filter(e => !b.includes(e));
+// My Solution
+function arrayDiff(a, b) {
+  return a.filter(element => !b.includes(element) )
 }
