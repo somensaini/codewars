@@ -8,8 +8,9 @@
 // Should return: 160 (the only even number)
 
 // My Solution
-function findOutlier(int){
-    var even = int.filter(a=>a%2==0);
-    var odd = int.filter(a=>a%2!==0);
-    return even.length==1? even[0] : odd[0];
-  }
+function findOutlier(ints){
+  let even = ints.filter(e => e % 2 == 0)
+  let odd = ints.filter(e => e % 2 != 0)
+  
+  return (even.length > odd.length) ? odd[0] : even[0]
+}
