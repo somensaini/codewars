@@ -12,12 +12,5 @@
 
 // My Solution
 String.prototype.toJadenCase = function () {
-    let arr = this.split(' ')  
-    for (let i = 0; i < arr.length; i++){
-      arr[i].charAt(0) = arr[i].charAt(0).toUpperCase()
-    }
-    return arr.join(' ')
-          
-  //              .map(word => word.split('').forEach(word => word.charAt(0).toUpperCase()))            
-  //              .join(' ')
-  };
+  return this.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+};
