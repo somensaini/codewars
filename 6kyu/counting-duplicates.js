@@ -14,17 +14,27 @@
 
 // My Solution
 function duplicateCount(text){
+  // Change text to lowercase to account for case-insensitive characters.
+  // Create a cache object to store the amount of times each character appears
+  // Create a counter variable for the return statement
+  text = text.toLowerCase()
+  let cache = {}
   let counter = 0
   
-  if (text.length != 0){
-    text = text.split('').map(character => character.toLowerCase()).sort((a, b) => (b - a))
-    console.log(text)
-    for (let i = 0; i < text.length; i++){
-      
-      if (text[i] == text[i+1]){
-        counter++
-      }
+  // Loop through each character in the string
+  // If the value of text[i] exists, increase by one. Otherwise, set it to 0 and increase by 1.
+  for (let i in text){
+    cache[text[i]] = ( cache[text[i]] || 0 ) + 1
+  }
+  
+  // Loop through character in the cache
+  // If that character has a value of greater than 1, increase counter by 1
+  for (let i in cache){
+    if (cache[i] > 1){
+      counter++
     }
   }
+  
+  // Return counter
   return counter
 }
