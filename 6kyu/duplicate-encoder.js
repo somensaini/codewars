@@ -13,10 +13,11 @@
 
 // My Solution
 function duplicateEncode(word){
+  word = word.toLowerCase()
   let str = ""
   
   for (let i = 0; i < word.length; i++){
-    if (word[i].indexOf() == word[i].lastIndexOf()){
+    if ( word.indexOf(word[i]) == word.lastIndexOf(word[i]) ){
       str += "("
     }else{
       str += ")"
