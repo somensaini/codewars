@@ -15,21 +15,11 @@
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
 // My Solution
-function removeSmallest(numbers) {
-    if (numbers.length == 1){
-      return []
-    }else{
-      
-      let index = 0
-      let smallest = numbers[0]
-      
-      for (let i = 0; i < numbers.length; i++){
-        if (numbers[i] < smallest){
-          smallest = numbers[i]
-          index = i
-        }
-      }
-      numbers.splice(index, 1)
-      return numbers
-    }  
-  }
+function removeSmallest(numbers){
+  let arr = [...numbers]
+  let smallest = Math.min(...arr)
+  let index = arr.indexOf(smallest)
+  
+  arr.splice(index, 1)
+  return arr
+}
