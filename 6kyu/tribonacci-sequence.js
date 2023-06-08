@@ -20,16 +20,8 @@
 
 // My Solution
 function tribonacci(signature,n){
-  let arr = signature
-  
-  if (n != 0){
-    
-    for (let i = 0; i < n - 3; i++){
-      arr.push(arr[i] + arr[i+1] + arr[i+2])
-    }
-    return arr
-    
-  }else{
-    return []
+  for (let i = 0; i < n - 3; i++){
+    signature.push(signature[i] + signature[i + 1] + signature[i + 2])
   }
+  return signature.slice(0, n)
 }
